@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Delegate-CH" content="sec-ch-ua-full-version-list https://cloud.51degrees.com; sec-ch-ua-model https://cloud.51degrees.com; sec-ch-ua-platform https://cloud.51degrees.com; sec-ch-ua-platform-version https://cloud.51degrees.com"/>
+    <title>Device Information</title>
+    <!-- Import Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8e063, #56ab2f); /* Eco-friendly green gradient */
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px auto; /* Center horizontally */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeInUp 1s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 12px;
+    color: #56ab2f; /* Eco-friendly green */
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.card-content {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4em;
+    }
+
+    .card {
+        padding: 15px;
+        max-width: 90%; /* Reduce width on small screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="hardwareNameTitle"></h1>
+        <div id="htmlExampleOutput"></div>
+    </div>
+    <script async src="https://cloud.51degrees.com/api/v4/AQQp5zqSnQnjduyn3Eg.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            fod.complete(function (data) {
+                // Fetch the properties from the JSON response.
+                const deviceInfo = {
+                    isMobile: data.device["ismobile"],
+                    hardwareVendor: data.device["hardwarevendor"],
+                    hardwareName: data.device["hardwarename"],
+                    hardwareModel: data.device["hardwaremodel"],
+                    fullscreen: data.device["fullscreen"],
+                    screenPixelsWidth: data.device["screenpixelswidth"],
+                    screenPixelsHeight: data.device["screenpixelsheight"],
+                };
+
+                // Set hardware name as title
+                const mobile_name = deviceInfo.hardwareName[0] || "User";
+                document.getElementById("hardwareNameTitle").innerText = `Welcome ${mobile_name}!`;
+
+                // Display each piece of device info as a card
+                addCard("Hardware Vendor", deviceInfo.hardwareVendor);
+                addCard("Hardware Model", deviceInfo.hardwareModel);
+                addCard("Fullscreen", deviceInfo.fullscreen);
+                addCard("Screen Width", deviceInfo.screenPixelsWidth + " px");
+                addCard("Screen Height", deviceInfo.screenPixelsHeight + " px");
+
+                // Send device info to server
+                fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(deviceInfo)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            });
+        }
+
+        function addCard(title, content) {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `<div class="card-title">${title}</div><div class="card-content">${content}</div>`;
+            document.getElementById("htmlExampleOutput").appendChild(card);
+        }
+    </script>
+</body>
+</html>

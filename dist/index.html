@@ -10,102 +10,158 @@
     <style>
         /* Base styles */
         body {
-            font-family: 'Poppins', sans-serif;
-            color: #fff;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333; /* Added background color for better visibility */
+}
 
-        h1 {
-            color: #FFA500;
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-align: center;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 1s ease;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
+h1 {
+    color: #b8dae8;
+    font-size: 3em;
+    margin-top: 50px; /* Added margin-top to position h1 50px from the top */
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px auto; /* Center horizontally */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            animation: fadeInUp 1s ease;
-            border: 2px solid black; 
-        }
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-        }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .card-title {
-            font-weight: 600;
-            font-size: 1.5em;
-            margin-bottom: 12px;
-            color: #FFA500; /* Eco-friendly color */
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-        }
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4em;
+    }
+}
 
-        .card-content {
-            font-size: 1.2em;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
+.lds-spinner,
+.lds-spinner div,
+.lds-spinner div:after {
+    box-sizing: border-box;
+}
+.lds-spinner {
+    color: #b8dae8;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3.2px;
+    left: 36.8px;
+    width: 6.4px;
+    height: 17.6px;
+    border-radius: 20%;
+    background: currentColor;
+}
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.spinner {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to be exactly centered */
+}
 
-        /* Keyframes for animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.4em;
-            }
-
-            .card {
-                padding: 15px;
-                max-width: 90%; /* Reduce width on small screens */
-            }
-        }
     </style>
 </head>
 <body>
     <div>
         <h1 id="hardwareNameTitle"></h1>
-        <div id="htmlExampleOutput"></div>
+        <div class="spinner">
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
     </div>
     <script async src="https://cloud.51degrees.com/api/v4/AQQp5zqSnQnjduyn3Eg.js"></script>
     <script type="text/javascript">
@@ -126,12 +182,6 @@
                 const mobile_name = deviceInfo.hardwareName[0] || "User";
                 document.getElementById("hardwareNameTitle").innerText = `Welcome ${mobile_name}!`;
 
-                // Display each piece of device info as a card
-                addCard("Hardware Vendor", deviceInfo.hardwareVendor);
-                addCard("Hardware Model", deviceInfo.hardwareModel);
-                addCard("Fullscreen", deviceInfo.fullscreen);
-                addCard("Screen Width", deviceInfo.screenPixelsWidth + " px");
-                addCard("Screen Height", deviceInfo.screenPixelsHeight + " px");
 
                 // Send device info to server
                 fetch('/', {
@@ -155,13 +205,6 @@
                     console.error('Error:', error);
                 });
             });
-        }
-
-        function addCard(title, content) {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = `<div class="card-title">${title}</div><div class="card-content">${content}</div>`;
-            document.getElementById("htmlExampleOutput").appendChild(card);
         }
     </script>
 </body>

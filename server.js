@@ -71,7 +71,7 @@ function searchCsv(id) {
 app.post('/', async (req, res) => {
     try {
         const deviceData = req.body;
-        const hardwareModel = "SM-A235F"; // Assuming hardwareModel comes from the client request
+        const hardwareModel = deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
         console.log('Received request body:', req.body); // Log the request body to verify the data
         
         // Create a new device document using the model

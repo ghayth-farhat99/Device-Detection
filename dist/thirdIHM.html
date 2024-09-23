@@ -3,40 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>thirdIHM</title>
-    <style>
-        body{
-            background-color: #b8dae8;
-        }
-        h1{
-            text-align: center;
-        }
-        p{
-            text-align: center;
-        }
-        .btn1 {
-            width: 150px;
-            margin-top: 20px;
-            position: relative;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        button{
-            width: 100%;
-            background-color: #9fbbc7;
-            text-align: center;
-        }
-    </style>
 </head>
-<body>
-    <h1>?</h1>
-    <p>L'écorating de votre téléphone n'est pas disponible.</p>
-    <p>Le constructeur n'a pas transmis les Informations nécessaires au calcul du score.</p>
+<body style="background-image: url(./images/background3.png);">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="header">
+            <figure>
+                <figcaption class="logo_title">Score Écorating</figcaption>
+                <img src="./images/logo.png" class="logo">
+            </figure>
+            <h1 class="score">?</h1>
+        </div>
 
-    <div class="btn1">
-        <button> Où explorer ?</button>
+        <div class="message">
+            <p>L'écorating de votre téléphone n'est pas disponible.</p>
+            <p>Le constructeur n'a pas transmis les Informations nécessaires au calcul du score.</p>
+        </div>
+
+        <div class="btn-container">
+            <div class="btn1">
+                <button> <img src="./images/button1.png" class="icon"> Où explorer ?</button>
+            </div>
+        </div>
+
     </div>
-
 </body>
 </html>

@@ -3,51 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>firstIHM</title>
-    <style>
-        body{
-            background-color: #b8dae8;
-        }
-        h1{
-            text-align: center;
-        }
-        p{
-            text-align: center;
-        }
-        .btn1 {
-            width: 150px;
-            margin-top: 20px;
-            position: relative;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        .btn2 {
-            width: 150px;
-            margin-top: 20px;
-            position: relative;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        button{
-            width: 100%;
-            background-color: #9fbbc7;
-            text-align: center;
-        }
-    </style>
 </head>
-<body>
-    <h1 id="ecoRating"></h1>
-    <p>Avez-vous pensé à prendre un accessoire à label vert ?</p>
-
-    <div class="btn1">
-        <button> Où chrecher ?</button>
+<body style="background-image:url('./images/background1.png');">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="header">
+            <figure>
+                <figcaption class="logo_title">Score Écorating</figcaption>
+                <img src="./images/logo.png" class="logo">
+            </figure>
+            <h1 id="ecoRating" class="score">null%</h1>
+        </div>
+        
+        <div class="message">
+            <p>Avez-vous pensé à prendre un accessoire à label vert ?</p>
+        </div>
+    
+        <div class="btn-container">
+            <div class="btn1">
+                <button><img src="./images/button1.png" class="icon"> Où chercher ?</button>
+            </div>
+        
+            <div class="btn2">
+                <button><img src="./images/button2.png" class="icon"> Choisir un label vert</button>
+            </div>
+        </div>
+        
     </div>
 
-    <div class="btn2">
-        <button> Choisir un label vert</button>
-    </div>
 
 
     <script>

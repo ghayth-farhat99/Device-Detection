@@ -137,12 +137,12 @@ app.get('/labels_verts_IHM.html', (_req, res) => {
     res.sendFile(path.join(__dirname, 'dist', './labels_verts/labels_verts_IHM.html'));
 });
 
-app.get('/où_chercher_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './où_chercher/où_chercher_IHM.html'));
+app.get('/ou_chercher_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './ou_chercher/ou_chercher_IHM.html'));
 });
 
-app.get('/où_explorer_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './où_explorer/où_explorer_IHM.html'));
+app.get('/ou_explorer_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './ou_explorer/ou_explorer_IHM.html'));
 });
 
 start();

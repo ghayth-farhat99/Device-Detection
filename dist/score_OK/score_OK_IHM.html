@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/score_OK/score_OK.css"/>
+    <title>Écorating</title>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="header">
+            <figure>
+                <figcaption class="logo_title">Score Écorating</figcaption>
+                <img src="./images/logo.png" class="logo">
+            </figure>
+            <h1 id="ecoRating" class="score">null%</h1>
+        </div>
+        
+        <div class="message">
+            <p>Avez-vous pensé à prendre un accessoire à label vert ?</p>
+        </div>
+    
+        <div class="btn-container">
+            <div class="btn1">
+                <button id="searchButton"><img src="./images/button1.png" class="icon"> Où chercher ?</button>
+            </div>
+        
+            <div class="btn2">
+                <button><img src="./images/button2.png" class="icon"> Choisir un label vert</button>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script>
+        // Extract URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Populate the HTML with data
+        document.getElementById('ecoRating').innerText = urlParams.get('eco_rating') + "%";
+
+        document.getElementById("searchButton").addEventListener("click", function() {
+            window.location.href = "/où_chercher_IHM.html"; // Change this to the page you want to redirect to
+        });
+        
+    </script>
+</body>
+</html>

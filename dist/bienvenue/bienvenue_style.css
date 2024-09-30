@@ -1,0 +1,154 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #b8dae8; /* Added background color for better visibility */
+}
+
+h1 {
+color: #333;
+font-size: 3em;
+margin-top: 50px; /* Added margin-top to position h1 50px from the top */
+margin-bottom: 20px;
+text-align: center;
+text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+animation: fadeInDown 1s ease;
+letter-spacing: 1.5px;
+position: relative;
+}
+
+.first_paragraph{
+text-align: center;
+color: #333;
+}
+
+.second_paragraph{
+margin-left: 5px;
+margin-right: 5px;
+font-size: 10px;
+color: #333;
+}
+.container{
+background-color: #FFF;
+margin: auto;
+border-radius: 5px;
+}
+/* Keyframes for animations */
+@keyframes fadeInDown {
+from {
+opacity: 0;
+transform: translateY(-20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+h1 {
+    font-size: 2.4em;
+}
+}
+
+.loader{
+display: block;
+position: relative;
+height: 10px;
+width: 235px;
+background-image: 
+linear-gradient(#FFF 20px, transparent 0), 
+linear-gradient(#FFF 20px, transparent 0), 
+linear-gradient(#FFF 20px, transparent 0), 
+linear-gradient(#FFF 20px, transparent 0), 
+linear-gradient(#FFF 20px, transparent 0), 
+linear-gradient(#FFF 20px, transparent 0);
+background-repeat: no-repeat;
+background-size: 35px auto; 
+background-position: 0 0, 40px 0, 80px 0, 120px 0, 160px 0, 200px 0; 
+animation: pgfill 1s linear infinite;
+}
+
+@keyframes pgfill {
+0% {   
+    background-image: 
+    linear-gradient(#FFF 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0); 
+}
+16% {   
+    background-image: 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0); 
+}
+32% {   
+    background-image: 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0); 
+}
+50% {   
+    background-image: 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0); 
+}
+66% {   
+    background-image: 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0); 
+}
+83% {   
+    background-image: 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0),
+    linear-gradient(#333 35px, transparent 0),
+    linear-gradient(#FFF 35px, transparent 0); 
+}
+100% {   
+    background-image: 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0), 
+    linear-gradient(#333 35px, transparent 0),
+    linear-gradient(#333 35px, transparent 0),
+    linear-gradient(#333 35px, transparent 0); 
+}
+}
+

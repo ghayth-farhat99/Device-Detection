@@ -12,6 +12,10 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const csvFilePath = path.resolve('devices.csv');
 
+//this line will solve the problem of running css and images 
+app.use(express.static(path.join(__dirname, 'dist')));
+
+
 // MongoDB connection
 const start = async () => {
     try {
@@ -38,9 +42,9 @@ const deviceSchema = new mongoose.Schema({
 
 const Device = mongoose.model('dev', deviceSchema);
 
-// Serve index.html for the root route
+// Serve bienvenue_IHM.html for the root route
 app.get('/', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', './bienvenue/bienvenue_IHM.html'));
 });
 
 // CSV search function
@@ -98,12 +102,12 @@ app.post('/', async (req, res) => {
                 }).toString();
                 
                 if (ecoRating > 80) {
-                    return res.redirect(`/firstIHM.html?${queryParams}`);
+                    return res.redirect(`/score_OK_IHM.html?${queryParams}`);
                 } else {
-                    return res.redirect(`/secondIHM.html?${queryParams}`);
+                    return res.redirect(`/score_améliorable_IHM.html?${queryParams}`);
                 }
             } else {
-                return res.redirect('/thirdIHM.html');
+                return res.redirect('/score_inconnu_IHM.html');
             }
         }
 
@@ -117,16 +121,28 @@ app.post('/', async (req, res) => {
 });
 
 // Serve the different HTML pages based on the redirects
-app.get('/firstIHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'firstIHM.html'));
+app.get('/score_OK_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './score_OK/score_OK_IHM.html'));
 });
 
-app.get('/secondIHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'secondIHM.html'));
+app.get('/score_améliorable_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './score_améliorable/score_améliorable_IHM.html'));
 });
 
-app.get('/thirdIHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'thirdIHM.html'));
+app.get('/score_inconnu_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './score_inconnu/score_inconnu_IHM.html'));
+});
+
+app.get('/labels_verts_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './labels_verts/labels_verts_IHM.html'));
+});
+
+app.get('/où_chercher_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './où_chercher/où_chercher_IHM.html'));
+});
+
+app.get('/où_explorer_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './où_explorer/où_explorer_IHM.html'));
 });
 
 start();

@@ -1,0 +1,117 @@
+body {
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content */
+    background-image: url('./images/background1.png'); /* Add your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    height: 100vh; /* Ensure body takes full height */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.overlay {
+    position: fixed; /* Change to fixed to cover the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure it covers the entire viewport */
+    background-color: rgba(184, 218, 232, 0.7); /* Your color with transparency */
+    z-index: 1; /* Ensure overlay is above the background */
+}
+
+.content {
+    position: relative; /* Position content above the overlay */
+    z-index: 2; /* Ensure content is above the overlay */
+    padding: 20px; /* Add some padding for spacing */
+    justify-content: center;
+    text-align: center; /* Center text in content */
+}
+
+.header {
+    display: flex; /* Use flexbox to align elements */
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+}
+
+figure {
+    width: 10%;
+    display: flex; /* Ensure the figure contents are in a row */
+    flex-direction: column; /* Stack caption and logo vertically */
+    align-items: center; /* Center items in the figure */
+    margin: 0; /* Remove default margin */
+}
+
+.logo_title{
+    width: 100%;
+    font-size: 10px;
+}
+
+.logo {
+    width: 100%; /* Adjust as needed */
+}
+
+.score {
+    width: 60%;
+    margin-left: 10px; /* Space between logo and h1 */
+    text-align: center;
+    font-size: 50px;
+}
+
+.message {
+    margin-top: 20%;
+    text-align: center;
+}
+
+/* Style for the button container */
+.btn-container {
+    width: 100%;
+    position: fixed;
+    bottom: 10px; /* Position the container at the bottom */
+    left: 50%; /* Center the container horizontally */
+    transform: translateX(-50%); /* Adjust for the container's width */
+    display: flex;
+    flex-direction: column; /* Ensure buttons are stacked vertically */
+    align-items: center; /* Center items in the container */
+}
+
+/* Style for individual buttons */
+.btn1, .btn2 {
+    width: 200px;
+    margin-bottom: 30px; /* Ensure there’s space between the buttons */
+}
+
+button {
+    width: 100%;
+    background-color: #9fbbc7;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 10px;
+    position: relative; /* So we can adjust the icon position */
+    border: 1px solid black;
+    border-radius: 20px; /* Apply a beautiful rounded border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Add hover effect for button */
+button:hover {
+    background-color: #8aa9b8; /* Slightly darker on hover */
+}
+
+/* Style for the icon */
+.icon {
+    width: 20px; /* Set a fixed size for the icon */
+    margin-right: 10px; /* Add space between the icon and the text */
+    position: absolute;
+    left: 10px; /* Align icon to the left inside the button */
+}
+
+/* Ensure the text is centered in the button */
+button span {
+    flex-grow: 1;
+    text-align: center;
+}

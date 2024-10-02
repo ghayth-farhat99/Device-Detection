@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/score_améliorable/score_améliorable.css"/>
+    <link rel="stylesheet" href="/score_ameliorable/score_ameliorable.css"/>
     <title>Écorating</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
 
         <div class="btn-container">
             <div class="btn1">
-                <button> <img src="./images/button1.png" class="icon"> Où chercher ?</button>
+                <button id="searchButton"> <img src="./images/button1.png" class="icon"> Où chercher ?</button>
             </div>
         </div>
     </div>
@@ -35,6 +35,10 @@
 
         // Populate the HTML with data
         document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
+
+        document.getElementById("searchButton").addEventListener("click", function(){
+            window.location.href = "/ou_chercher_IHM.html";
+        })
         
     </script>
 </body>

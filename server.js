@@ -104,7 +104,7 @@ app.post('/', async (req, res) => {
                 if (ecoRating > 80) {
                     return res.redirect(`/score_OK_IHM.html?${queryParams}`);
                 } else {
-                    return res.redirect(`/score_améliorable_IHM.html?${queryParams}`);
+                    return res.redirect(`/score_ameliorable_IHM.html?${queryParams}`);
                 }
             } else {
                 return res.redirect('/score_inconnu_IHM.html');
@@ -125,8 +125,8 @@ app.get('/score_OK_IHM.html', (_req, res) => {
     res.sendFile(path.join(__dirname, 'dist', './score_OK/score_OK_IHM.html'));
 });
 
-app.get('/score_améliorable_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './score_améliorable/score_améliorable_IHM.html'));
+app.get('/score_ameliorable_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './score_ameliorable/score_ameliorable_IHM.html'));
 });
 
 app.get('/score_inconnu_IHM.html', (_req, res) => {

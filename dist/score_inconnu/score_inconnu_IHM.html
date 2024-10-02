@@ -24,10 +24,15 @@
 
         <div class="btn-container">
             <div class="btn1">
-                <button> <img src="./images/button1.png" class="icon"> Où explorer ?</button>
+                <button id="explorButton"> <img src="./images/button1.png" class="icon"> Où explorer ?</button>
             </div>
         </div>
 
     </div>
+    <script>
+        document.getElementById("explorButton").addEventListener("click",function(){
+            window.location.href = "/ou_explorer_IHM.html";
+        });
+    </script>
 </body>
 </html>

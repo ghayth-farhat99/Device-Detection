@@ -27,7 +27,7 @@
             </div>
         
             <div class="btn2">
-                <button><img src="./images/button2.png" class="icon"> Choisir un label vert</button>
+                <button id="choiceButton"><img src="./images/button2.png" class="icon"> Choisir un label vert</button>
             </div>
         </div>
         
@@ -44,6 +44,10 @@
 
         document.getElementById("searchButton").addEventListener("click", function() {
             window.location.href = "/ou_chercher_IHM.html"; // Change this to the page you want to redirect to
+        });
+
+        document.getElementById("choiceButton").addEventListener("click", function() {
+            window.location.href = "/labels_verts_IHM.html"; // Change this to the page you want to redirect to
         });
         
     </script>

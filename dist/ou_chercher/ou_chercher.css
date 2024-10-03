@@ -5,15 +5,31 @@ body{
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh;
     background-color: #b8dae8; /* Added background color for better visibility */
 }
-
 .content {
     position: relative; /* Position content above the overlay */
     z-index: 2; /* Ensure content is above the overlay */
     padding: 20px; /* Add some padding for spacing */
     justify-content: center;
-    text-align: center; /* Center text in content */
+    text-align: left; /* Center text in content */
+    width: 100%;
+}
+.row {
+    display: flex;
+    margin-top: 10%;
+}
+
+    .column {
+    flex: 50%;
+}
+
+.title{
+    margin-left: 10%;
+}
+
+h5{
+    margin-top: 10%;
+    font-size: 25px;
 }

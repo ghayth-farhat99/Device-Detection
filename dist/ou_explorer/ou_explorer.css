@@ -9,3 +9,10 @@ body{
     min-height: 100vh;
     background-color: #b8dae8; /* Added background color for better visibility */
 }
+.content {
+    position: relative; /* Position content above the overlay */
+    z-index: 2; /* Ensure content is above the overlay */
+    padding: 20px; /* Add some padding for spacing */
+    justify-content: center;
+    text-align: center; /* Center text in content */
+}

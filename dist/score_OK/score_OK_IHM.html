@@ -2,19 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/score_OK/score_OK.css"/>
     <title>Écorating</title>
+    
 </head>
 <body>
     <div class="overlay"></div>
     <div class="content">
+        <div class="navbar">
+            <div>
+                
+            </div>
+            <diV class="nomAppli">
+                <h>nomAppli</h>
+            </diV>
+        </div>
         <div class="header">
             <figure>
-                <figcaption class="logo_title">Score Écorating</figcaption>
-                <img src="./images/logo.png" class="logo">
+                <figcaption class="logo_title">score écorating</figcaption>
+                <img src="../images/logo.png" class="logo">
             </figure>
-            <h1 id="ecoRating" class="score">null%</h1>
+            <h1 id="ecoRating" class="score">82%</h1>
         </div>
         
         <div class="message">
@@ -23,12 +35,9 @@
     
         <div class="btn-container">
             <div class="btn1">
-                <button id="searchButton"><img src="./images/button1.png" class="icon"> Où chercher ?</button>
+                <button id="searchButton"><img src="../images/button1.png" class="icon"><span class="button-text">Où les trouver ?</span></button>
             </div>
-        
-            <div class="btn2">
-                <button id="choiceButton"><img src="./images/button2.png" class="icon"> Choisir un label vert</button>
-            </div>
+    
         </div>
         
     </div>
@@ -39,17 +48,9 @@
         // Extract URL parameters
         const urlParams = new URLSearchParams(window.location.search);
 
-        // Populate the HTML with data
-        document.getElementById('ecoRating').innerText = urlParams.get('eco_rating') + "%";
+          // Populate the HTML with data
+          document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
 
-        document.getElementById("searchButton").addEventListener("click", function() {
-            window.location.href = "/ou_chercher_IHM.html"; // Change this to the page you want to redirect to
-        });
-
-        document.getElementById("choiceButton").addEventListener("click", function() {
-            window.location.href = "/labels_verts_IHM.html"; // Change this to the page you want to redirect to
-        });
-        
     </script>
 </body>
 </html>

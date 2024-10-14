@@ -6,157 +6,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/score_OK/score_OK.css"/>
     <title>Écorating</title>
-    <style>
-        body {
-    margin: 0; /* Remove default margin */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center all content */
-    background-image: url('../images/background1.png'); /* Add your background image */
-    background-size: 100%; /* Cover the entire viewport */
-    background-repeat: no-repeat;
-    background-position: center 70%; /* Center the image */
-    height: 100vh; /* Ensure body takes full height */
-    overflow: hidden; /* Prevent overflow */
-}
-
-.overlay {
-    position: fixed; /* Change to fixed to cover the viewport */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Ensure it covers the entire viewport */
-    background-color: rgba(183,216,229,0.7); /* Your color with transparency */
-    z-index: 1; /* Ensure overlay is above the background */
-}
-
-.content {
-    width: 100%;
-    height: 100%;
-    position: fixed; /* Position content above the overlay */
-    z-index: 2; /* Ensure content is above the overlay */
-    justify-content: center;
-    text-align: center; /* Center text in content */
-}
-
-.navbar{
-    width: 100%;
-    height: 10%;
-    background-color: white;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-}
-
-.header {
-    display: flex; /* Use flexbox to align elements */
-    justify-content: center; /* Center elements horizontally */
-    align-items: center; /* Center elements vertically */
-    height: 25%;
-}
-
-figure {
-    width: 50px;
-    display: flex; /* Ensure the figure contents are in a row */
-    flex-direction: column; /* Stack caption and logo vertically */
-    align-items: center; /* Center items in the figure */
-    margin: 0; /* Remove default margin */
-}
-
-.logo_title{
-    width: 100%;
-    font-size: 12px;
-    font-family: 'dosis';
-    font-weight: 500; /*  */
-    margin-bottom: 5px;
-    color: #434F54;
-}
-
-.logo {
-    width: 100%; /* Adjust as needed */
-}
-
-.score {
-    width: 60%;
-    color: #434F54;
-    margin-left: 20px; /* Space between logo and h1 */
-    text-align: center;
-    font-size:120px;
-    font-family: 'dosis';
-    font-weight: 700; /* Bold weight */
-}
-
-.message {
-    margin-top: 15%;
-    text-align: center;
-    font-family: 'dosis';
-    font-weight: 400; /* regular weight */
-    font-size: 30px;
-    color: #434F54;
-}
-
-/* Style for the button container */
-.btn-container {
-    width: 100%;
-    position: fixed;
-    bottom: 10px; /* Position the container at the bottom */
-    left: 50%; /* Center the container horizontally */
-    transform: translateX(-50%); /* Adjust for the container's width */
-    display: flex;
-    flex-direction: column; /* Ensure buttons are stacked vertically */
-    align-items: center; /* Center items in the container */
-}
-
-/* Style for individual buttons */
-.btn1, .btn2 {
-    width: 250px;
-    margin-bottom: 10px; /* Ensure there’s space between the buttons */
-}
-
-button {
-    font-family: 'dosis' ;
-    font-weight: 700; /* Bold weight */
-    font-size: 20px;
-    color: white;
-    width: 100%;
-    background-color: #9FBBC7;
-    text-align: center;
-    display: flex;
-    align-items: center; /* Align icon and text vertically */
-    justify-content: center; /* Center content horizontally */
-    padding: 10px;
-    position: relative; /* So we can adjust the icon position */
-    border: 1px solid #434F54;
-    border-radius: 20px; /* Apply a beautiful rounded border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-/* Add hover effect for button */
-button:hover {
-    background-color: #8aa9b8; /* Slightly darker on hover */
-}
-
-/* Style for the icon */
-.icon {
-    width: 40px; /* Set a fixed size for the icon */
-    position: absolute;
-    left: 10px; /* Align icon to the left inside the button */
-
-}
-
-.button-text {
-    flex: 1;
-    text-align: center;
-    margin-left: 30px;
-}
-    </style>
+    
 </head>
 <body>
-    <div class="overlay"></div>
     <div class="content">
         <div class="navbar">
             <div>
@@ -197,7 +50,6 @@ button:hover {
           document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
 
     </script>
-    
     <!-- Inclure le fichier wakeLock.js -->
     <script src="../js/wakeLock.js"></script>
 </body>

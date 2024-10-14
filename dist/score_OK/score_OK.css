@@ -57,7 +57,8 @@ figure {
 .logo_title{
     width: 100%;
     font-size: 12px;
-    font-weight: 300; /* Light weight */
+    font-family: 'dosis';
+    font-weight: 500; /*  */
     margin-bottom: 5px;
     color: #434F54;
 }

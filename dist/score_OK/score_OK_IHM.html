@@ -6,8 +6,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/score_OK/score_OK.css"/>
     <title>Écorating</title>
-    
+
 </head>
 <body>
     <div class="content">
@@ -33,21 +34,23 @@
     
         <div class="btn-container">
             <div class="btn1">
-                <button id="searchButton"><img src="../images/button1.png" class="icon"><span class="button-text">Où les trouver ?</span></button>
+                <button id="findButton"><img src="../images/button1.png" class="icon"><span class="button-text">Où les trouver ?</span></button>
             </div>
     
-        </div>
-        
+        </div>   
     </div>
-
 
 
     <script>
         // Extract URL parameters
         const urlParams = new URLSearchParams(window.location.search);
 
-          // Populate the HTML with data
-          document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
+        document.getElementById("findButton").addEventListener("click", function(){
+            window.location.href = "/labels_verts_IHM.html";
+        })
+
+        // Populate the HTML with data
+        document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
 
     </script>
     <!-- Inclure le fichier wakeLock.js -->

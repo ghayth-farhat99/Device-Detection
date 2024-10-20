@@ -10,22 +10,22 @@
     <title>Écorating</title>
 
 </head>
-<body>
+<body data-page-id="score_OK_IHM">
     <div class="content">
         <div class="navbar">
             <div>
                 <!-- logo of the application will be here -->
             </div>
             <diV class="nomAppli">
-                <h>nomAppli</h>
+                <h1>nomAppli</h1>
             </diV>
         </div>
         <div class="header">
             <figure>
                 <figcaption class="logo_title">score écorating</figcaption>
-                <img src="../images/logo.png" class="logo">
+                <img class="logo">
             </figure>
-            <h1 id="ecoRating" class="score">82%</h1>
+            <h1 id="ecoRating" class="score">null%</h1>
         </div>
         
         <div class="message">
@@ -34,7 +34,7 @@
     
         <div class="btn-container">
             <div class="btn1">
-                <button id="findButton"><img src="../images/button1.png" class="icon"><span class="button-text">Où les trouver ?</span></button>
+                <button id="findButton"><img src="../images/buttons/button1.png" class="icon"><span class="button-text">Où les trouver ?</span></button>
             </div>
     
         </div>   
@@ -53,6 +53,10 @@
         document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
 
     </script>
+
+    <!-- Inclure le fichier saisonDetection.js -->
+    <script src="../js/saisonDetection.js"></script>
+    
     <!-- Inclure le fichier wakeLock.js -->
     <script src="../js/wakeLock.js"></script>
 </body>

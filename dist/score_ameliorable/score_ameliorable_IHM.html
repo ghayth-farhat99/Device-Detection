@@ -10,7 +10,7 @@
     <title>Écorating</title>
 
 </head>
-<body>
+<body data-page-id="score_ameliorable_IHM">
     <div class="overlay"></div>
     <div class="content">
         <div class="navbar">
@@ -18,12 +18,12 @@
                 <!-- logo of the application will be here -->
             </div>
             <diV class="nomAppli">
-                <h>nomAppli</h>
+                <h1>nomAppli</h1>
             </diV>
         </div>
         <div class="header">
             <figure>
-                <figcaption class="logo_title">score ecorating</figcaption>
+                <figcaption class="logo_title">score écorating</figcaption>
                 <img src="../images/logo.png" class="logo">
             </figure>
             <h1 id="ecoRating" class="score"></h1>
@@ -35,7 +35,7 @@
 
         <div class="btn-container">
             <div class="btn1">
-                <button id="searchButton"> <img src="../images/button1.png" class="icon"><span class="button-text"> Où chercher ?</span></button>
+                <button id="searchButton"> <img src="../images/buttons/button1.png" class="icon"><span class="button-text"> Où chercher ?</span></button>
             </div>
         </div>
     </div>
@@ -51,7 +51,13 @@
         document.getElementById("searchButton").addEventListener("click", function(){
             window.location.href = "/ou_chercher_IHM.html";
         })
-        
     </script>
+
+     <!-- Inclure le fichier saisonDetection.js -->
+     <script src="../js/saisonDetection.js"></script>
+
+     <!-- Inclure le fichier wakeLock.js -->
+     <script src="../js/wakeLock.js"></script>
+
 </body>
 </html>

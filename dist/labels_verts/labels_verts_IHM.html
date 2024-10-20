@@ -10,7 +10,7 @@
     <title>Écorating</title>
 
 </head>
-<body>
+<body data-page-id="labels_verts_IHM">
     <div class="navbar">
         <div>
             <!-- logo of the application will be here -->
@@ -21,32 +21,39 @@
     </div>
     
     <div class="content">
-        <h1>Choisir un label vert</h1>
-        <p>nomAppli vous donne la direction !</p>
-        <div class="image-container">
-            <img src="../images/direction_bleue.png"/>
+        <h1 class="titre">Choisir un label vert</h1>
+        <div class="header">
+            <p class="first_message">nomAppli vous donne la direction !</p>
+            <img class="image_direction"/>
         </div>
 
         <h3>Glossaire des labels</h3>
         <p>Matériaux 100% recyclés</p>
         <div class="image-container">
-            <img src="../images/labels 1.png"/>
+            <img src="../images/labels/labels 1.png" class="image_materaiux_recycles"/>
         </div>
 
         <p>Matériaux partiellement recyclés</p>
         <div class="image-container">
-            <img src="../images/labels 2.png"/>
+            <img src="../images/labels/labels 2.png" class="image_materaiux_partiellement_recycles"/>
         </div>
 
         <p>Produit sans impact CO2</p>
         <div class="image-container">
-            <img src="../images/labels 3.png"/>
+            <img src="../images/labels/labels 3.png" class="image_impact_co2"/>
         </div>
 
         <p>Labels sans information sur le produit</p>
         <div class="image-container">
-            <img src="../images/labels 4.png"/>
+            <img src="../images/labels/labels 4.png" class="image_information_produit"/>
         </div>    
     </div>
+
+    <!-- Inclure le fichier saisonDetection.js -->
+    <script src="../js/saisonDetection.js"></script>
+    
+    <!-- Inclure le fichier wakeLock.js -->
+    <script src="../js/wakeLock.js"></script>
+
 </body>
 </html>

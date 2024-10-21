@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 const csv = require('csv-parser');
-require('dotenv').config();
 
 mongoose.set('strictQuery', false);
 const app = express();

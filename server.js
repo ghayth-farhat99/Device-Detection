@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 const csv = require('csv-parser');
+require('dotenv').config();
 
 mongoose.set('strictQuery', false);
 const app = express();
@@ -19,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // MongoDB connection
 const start = async () => {
     try {
-        await mongoose.connect('mongodb+srv://gaythfr99:lr3n89vBund6JT6i@test.ozv9s.mongodb.net/?retryWrites=true&w=majority&appName=test');
+        await mongoose.connect(process.env.MONGODB_CONNECT_URL);
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
         });
@@ -101,7 +102,7 @@ app.post('/', async (req, res) => {
                     resource_efficiency: encodeURIComponent(deviceFromCsv.resource_efficiency || '')
                 }).toString();
                 
-                if (ecoRating > 80) {
+                if (ecoRating > process.env.THRESHOLD) {
                     return res.redirect(`/score_OK_IHM.html?${queryParams}`);
                 } else {
                     return res.redirect(`/score_ameliorable_IHM.html?${queryParams}`);

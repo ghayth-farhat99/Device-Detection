@@ -1,6 +1,6 @@
-window.onload = function() {
+window.addEventListener('load', function() {
+    // Wait for the other scripts to complete before running the third script
     fod.complete(function (data) {
-        // Fetch the properties from the JSON response.
         const deviceInfo = {
             isMobile: data.device["ismobile"],
             hardwareVendor: data.device["hardwarevendor"],
@@ -10,6 +10,7 @@ window.onload = function() {
             screenPixelsWidth: data.device["screenpixelswidth"],
             screenPixelsHeight: data.device["screenpixelsheight"],
         };
+
 
         // Set hardware name as title
         // const mobile_name = deviceInfo.hardwareName[0] || "User";
@@ -26,9 +27,9 @@ window.onload = function() {
         })
         .then(response => {
             if (response.redirected) {
-                window.location.href = response.url; // Redirect to the new URL
+                window.location.href = response.url;
             } else {
-                return response.json(); // Handle JSON response if needed
+                return response.json();
             }
         })
         .then(data => {
@@ -38,4 +39,4 @@ window.onload = function() {
             console.error('Error:', error);
         });
     });
-}
+});       

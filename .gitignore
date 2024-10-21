@@ -1,8 +1,5 @@
 .vercel
-.env*.local
 
 # Local Netlify folder
 .netlify
 
-#dotenv file
-.env

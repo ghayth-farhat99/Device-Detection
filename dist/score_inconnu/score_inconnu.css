@@ -49,7 +49,7 @@ figure {
 .logo_title{
     width: 100%;
     font-size: 12px;
-    font-weight: 500; /*  */
+    font-weight: 500; /* should be light */
     margin-bottom: 5px;
 }
 
@@ -62,7 +62,7 @@ figure {
     margin-left: 20px; /* Space between logo and h1 */
     text-align: center;
     font-size:120px;
-    font-weight: 700; /* Bold weight */
+    font-weight: bold; /* Bold weight */
 }
 
 .message {
@@ -70,7 +70,7 @@ figure {
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
-    font-weight: 400; /* regular weight */
+    font-weight: normal; /* regular weight */
     font-size: 25px;
 }
 
@@ -94,7 +94,7 @@ figure {
 
 button {
     font-family: 'dosis' ;
-    font-weight: 700; /* Bold weight */
+    font-weight: bold; /* Bold weight */
     font-size: 20px;
     color: white;
     width: 100%;

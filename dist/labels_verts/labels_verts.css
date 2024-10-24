@@ -26,6 +26,12 @@ body {
     justify-content: center;
 }
 
+.title{
+    margin-left: 20px;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
 .header {
     display: flex; /* Use flexbox to align elements */
     justify-content: center; /* Center elements horizontally */
@@ -33,11 +39,24 @@ body {
     height: 25%;
     margin-top: 20px;
     margin-bottom: 20px;
+    align-items: flex-start;
 }
 
-h1, h3 {
+.first_message{
+    margin: 0;
     margin-left: 20px;
-    margin-bottom: 5px;
+    width: 70%;
+    font-weight: normal;
+}
+
+.image_direction{
+    width: 20%;
+    margin-right: 10%;
+}
+
+h3 {
+    margin-left: 20px;
+    margin-bottom: 0;
 }
 
 p {
@@ -46,10 +65,6 @@ p {
     font-size: 20px;
 }
 
-.titre{
-    font-size: 25px;
-    margin-top: 20px;
-}
 
 .image_materaiux_partiellement_recycles,
 .image_materaiux_recycles,
@@ -76,14 +91,4 @@ p {
     display: block;
     max-width: 100%;
     height: auto;
-}
-
-
-.first_message{
-    width: 70%;
-}
-
-.image_direction{
-    width: 20%;
-    margin-right: 10%;
 }

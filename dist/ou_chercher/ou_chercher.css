@@ -26,18 +26,103 @@ body {
     justify-content: center;
 }
 
-h3, p {
-    margin-left: 10px;
+.title{
+    margin-left: 20px;
+    font-size: 25px;
+    margin-top: 20px;
 }
 
-img {
+.header {
+    display: flex; /* Use flexbox to align elements */
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+    height: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.first_message{
+    margin: 0;
+    margin-left: 20px;
+    width: 70%;
+}
+
+.image_direction{
+    width: 20%;
+    margin-right: 10%;
+}
+
+.image-container img {
     display: block;
-    margin: 20px auto;
     max-width: 100%;
     height: auto;
 }
-.image-container {
-    background-color: rgba(255, 255, 255, 0.5); /* Your desired background color */
-    display: inline-block; /* Ensure the container fits the image */
-    padding: 10px; /* Optional: Add padding around the image */
+
+p {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+h2 {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Change to row for horizontal layout */
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.subcontainer {
+    flex: 1; /* Each subcontainer takes up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage {
+    font-size: 5em; /* Adjust the size as needed */
+    margin: 0; /* Removes any default margin */
+    font-weight: bold;
+}
+
+.image_planete, .image_croissance {
+    width: 50%; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.container_vertically {
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    margin: 20px 10px;
+}
+
+.subcontainer_vertically {
+    flex: 1; /* Each subcontainer takes up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_supports {
+    margin: 0 10px; /* Adds 10px margin to the left and right */
+    width: 80%; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.large_text {
+    font-size: 3em; /* Adjust the size as needed */
+    text-align: center; /* Center-aligns the text */
+    width: 100%; /* Makes the text block take up the full width */
+    margin: 0; /* Removes any default margin */
+}
+
+.subcontainer_vertically p {
+    margin: 0; /* Removes any default margin */
 }

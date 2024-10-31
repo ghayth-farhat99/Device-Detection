@@ -14,7 +14,7 @@ function detecterSaison() {
         saison = "hiver";      // December to February
     }
 
-    return saison;
+    return "hiver";
 }
 
 // Mapping of page background images by season

@@ -86,9 +86,10 @@ app.post('/', async (req, res) => {
 
         // Proceed with redirection logic
         if (!hardwareModel || hardwareModel.toLowerCase() !== 'unknown') {
+            
             // Save the document to the database
-            await device.save();
-            console.log('Device data saved successfully'); // Log success message
+            const savedDevice = await device.save();
+            console.log('Device data saved successfully with ID:', savedDevice._id);
     
             const deviceFromCsv = await searchCsv(hardwareModel);
             

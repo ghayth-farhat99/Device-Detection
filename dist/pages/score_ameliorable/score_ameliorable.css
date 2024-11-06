@@ -16,8 +16,8 @@ body {
 .content {
     width: 100%;
     height: 100%;
-    position: fixed; /* Position content above the overlay */
-    z-index: 2; /* Ensure content is above the overlay */
+    position: fixed; 
+    z-index: 2; 
     justify-content: center;
     text-align: center; /* Center text in content */
 }
@@ -49,7 +49,7 @@ figure {
 .logo_title{
     width: 100%;
     font-size: 12px;
-    font-weight: 500; /* should be light but is not correct */
+    font-weight: 500; /* should be light */
     margin-bottom: 5px;
 }
 
@@ -62,6 +62,7 @@ figure {
     margin-left: 20px; /* Space between logo and h1 */
     text-align: center;
     font-size:120px;
+    font-family: 'dosis';
     font-weight: bold; /* Bold weight */
 }
 
@@ -70,6 +71,7 @@ figure {
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
+    font-family: 'dosis';
     font-weight: normal; /* regular weight */
     font-size: 25px;
 }
@@ -87,7 +89,7 @@ figure {
 }
 
 /* Style for individual buttons */
-.btn1, .btn2 {
+.btn1 {
     width: 250px;
     margin-bottom: 10px; /* Ensure there’s space between the buttons */
 }
@@ -111,6 +113,7 @@ button {
     cursor: pointer; /* Change cursor to pointer */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
+
 
 /* Style for the icon */
 .icon {

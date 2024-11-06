@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    background-color: var(--background-color); 
+    color: var(--text-color);
+    font-family: 'dosis';
+}
+
+.navbar {
+    width: 100%;
+    height: 10vh; /* 10% of the viewport height */
+    background-color: white;
+    position: fixed; /* Fix the navbar */
+    top: 0; /* Position it at the top */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    display: flex; /* Use flexbox to align elements */
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+    height: 25%;
+}
+
+figure {
+    width: 50px;
+    display: flex; /* Ensure the figure contents are in a row */
+    flex-direction: column; /* Stack caption and logo vertically */
+    align-items: center; /* Center items in the figure */
+    margin: 0; /* Remove default margin */
+}
+
+.logo_title{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500; /* should be light */
+    margin-bottom: 5px;
+}
+
+.logo {
+    width: 100%; /* Adjust as needed */
+}
+
+.score {
+    width: 60%;
+    margin-left: 20px; /* Space between logo and h1 */
+    text-align: center;
+    font-size:120px;
+    font-family: 'dosis';
+    font-weight: bold; /* Bold weight */
+}
+
+.btn_download{
+    float: right;
+    width: 20%;
+    margin-right: 10%;
+    background-color: var(--button-color);
+    border: 1px solid var(--border-button-color);
+    border-radius: 20px; /* Apply a beautiful rounded border */
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+
+.bars-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.axe_container {
+    margin-bottom: 20px;
+}
+
+.bar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    margin-left: 5%;
+    width: 80%;
+    flex-grow: 1;
+}
+
+.bar-header p {
+    margin: 0; /* Remove default margin from <p> elements */
+}
+
+.progress-bar {
+    position: relative;
+    max-width: 80%;
+    margin-left: 5%;
+    border: 1px solid var(--button-color);
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.progress {
+    height: 20px;
+    background-color: var(--text-color);
+    text-align: center;
+}
+
+.divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--button-color);
+}
+
+.divider:nth-child(2) {
+    left: 20%;
+}
+
+.divider:nth-child(3) {
+    left: 40%;
+}
+
+.divider:nth-child(4) {
+    left: 60%;
+}
+
+.divider:nth-child(5) {
+    left: 80%;
+}
+
+.drop_down_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+    width: 10%;
+}
+
+.drop_down_img {
+    transition: transform 0.3s;
+}
+
+.drop_down_img.rotate {
+    transform: rotate(180deg);
+}
+
+.definition.hidden {
+    display: block;
+    transition: display 0.3s;
+    width: 90%;
+    margin-left: 5%;
+    border: 1px solid var(--button-color);
+    border-radius: 5px;
+}
+
+.definition {
+    display: none;
+}
+
+.definition_p {
+    display: none;
+}
+
+.definition_p.hidden {
+    display: block;
+    transition: display 0.3s;
+    width: calc(100% - 10px); /* Adjust width to match the bar and button */
+    resize: none; /* Prevent manual resizing */
+    overflow: hidden; /* Hide overflow */
+    margin: auto;
+}
+
+#durability_score, #repairability_score, #recyclability_score, #climate_efficiency_score, #resource_efficiency_score{
+    font-weight: 600; 
+}

@@ -87,7 +87,7 @@ figure {
 }
 
 /* Style for individual buttons */
-.btn1, .btn2 {
+.btn1 {
     width: 250px;
     margin-bottom: 10px; /* Ensure there’s space between the buttons */
 }

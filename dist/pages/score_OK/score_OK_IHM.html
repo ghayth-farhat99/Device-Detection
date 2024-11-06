@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/score_ameliorable/score_ameliorable.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pages/score_OK/score_OK.css"/>
     <title>Écorating</title>
 
 </head>
-<body data-page-id="score_ameliorable_IHM">
-    <div class="overlay"></div>
+<body data-page-id="score_OK_IHM">
     <div class="content">
         <div class="navbar">
             <div>
@@ -24,40 +23,41 @@
         <div class="header">
             <figure>
                 <figcaption class="logo_title">score écorating</figcaption>
-                <img src="../images/logo.png" class="logo">
+                <img class="logo">
             </figure>
-            <h1 id="ecoRating" class="score"></h1>
+            <h1 id="ecoRating" class="score">null%</h1>
+        </div>
+        
+        <div class="message">
+            <p>Avez-vous pensé à prendre un accessoire à label vert ?</p>
         </div>
     
-        <div class="message">
-            <p>Et si vous pensiez à un mobile à moindre impact pour la planète ?</p>
-        </div>
-
         <div class="btn-container">
             <div class="btn1">
-                <button id="searchButton"> <img src="../images/buttons/button1.png" class="icon"><span class="button-text"> Où chercher ?</span></button>
+                <button id="findButton"><img src="../images/buttons/button1.png" class="icon"><span class="button-text">Où les trouver ?</span></button>
             </div>
-        </div>
-    </div>
     
+        </div>   
+    </div>
+
 
     <script>
         // Extract URL parameters
         const urlParams = new URLSearchParams(window.location.search);
 
+        document.getElementById("findButton").addEventListener("click", function(){
+            window.location.href = "/labels_verts_IHM.html";
+        })
+
         // Populate the HTML with data
         document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
 
-        document.getElementById("searchButton").addEventListener("click", function(){
-            window.location.href = "/ou_chercher_IHM.html";
-        })
     </script>
 
-     <!-- Inclure le fichier saisonDetection.js -->
-     <script src="../js/saisonDetection.js"></script>
-
-     <!-- Inclure le fichier wakeLock.js -->
-     <script src="../js/wakeLock.js"></script>
-
+    <!-- Inclure le fichier saisonDetection.js -->
+    <script src="js/saisonDetection.js"></script>
+    
+    <!-- Inclure le fichier wakeLock.js -->
+    <script src="js/wakeLock.js"></script>
 </body>
 </html>

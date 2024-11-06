@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/pages/score_details/score_details.css"/>
+    <title>Écorating</title>
+
+</head>
+<body data-page-id="score_details_IHM">
+    <div class="navbar">
+        <div>
+            <!-- logo of the application will be here -->
+        </div>
+        <div class="nomAppli">
+            <h1>nomAppli</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header">
+            <figure>
+                <figcaption class="logo_title">score écorating</figcaption>
+                <img class="logo">
+            </figure>
+            <h1 id="ecoRating" class="score"></h1>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn_download">pdf</button>
+        </div>
+
+        <div class="bars-container">
+            <div class="axe_container">
+                <div class="bar-header">
+                    <p>Durabilité</p>
+                    <p id="durability_score"></p>
+                </div>
+                <div class="bar-container">
+                    <div class="progress-bar">
+                        <div id="durability-bar" class="progress"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                    </div>
+                    <button class="drop_down_button" onclick="toggleDropdown(this)">
+                        <img class="drop_down_img" alt="Dropdown">
+                    </button>
+                </div>
+                <div class="definition">
+                    <p class="definition_p">Note la robustesse du mobile, la durée de vie de sa batterie, et la durée de garantie de l’appareil ou de ses composants.</p>
+                </div>
+            </div>
+        
+            <div class="axe_container">
+                <div class="bar-header">
+                    <p>Réparabilité</p>
+                    <p id="repairability_score"></p>
+                </div>
+                <div class="bar-container">
+                    <div class="progress-bar">
+                        <div id="repairability-bar" class="progress"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                    </div>
+                    <button class="drop_down_button" onclick="toggleDropdown(this)">
+                        <img class="drop_down_img" alt="Dropdown">
+                    </button>
+                </div>
+                <div class="definition">
+                    <p class="definition_p">Note la facilité à réparer le mobile, y compris la conception de l’appareil et les propositions qui pourraient augmenter sa durée de vie, à travers sa réutilisation et les mises à niveau envisageables.</p>
+                </div>
+            </div>        
+
+            <div class="axe_container">
+                <div class="bar-header">
+                    <p>Recyclabilité</p>
+                    <p id="recyclability_score"></p>
+                </div>
+                <div class="bar-container">
+                    <div class="progress-bar">
+                        <div id="recyclability-bar" class="progress"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                    </div>
+                    <button class="drop_down_button" onclick="toggleDropdown(this)">
+                        <img class="drop_down_img" alt="Dropdown">
+                    </button>
+                </div>
+                <div class="definition">
+                    <p class="definition_p">Note la capacité des composants à être démontés et récupérés, les informations qui le permettent et la capacité de recyclage des matériaux.</p>
+                </div>
+            </div>
+
+            <div class="axe_container">
+                <div class="bar-header">
+                    <p>Respect du climat</p>
+                    <p id="climate_efficiency_score"></p>
+                </div>
+                <div class="bar-container">
+                    <div class="progress-bar">
+                        <div id="climate-efficiency-bar" class="progress"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                    </div>
+                    <button class="drop_down_button" onclick="toggleDropdown(this)">
+                        <img class="drop_down_img" alt="Dropdown">
+                    </button>
+                </div>
+                <div class="definition">
+                    <p class="definition_p">Evalue les émissions de gaz à effet de serre pendant la globalité du cycle de vie ; plus la note est élevée, plus le mobile contribue à la protection du climat.</p>
+                </div>
+            </div>
+
+            <div class="axe_container">
+                <div class="bar-header">
+                    <p>Préservation des ressources</p>
+                    <p id="resource_efficiency_score"></p>
+                </div>
+                <div class="bar-container">
+                    <div class="progress-bar">
+                        <div id="resource-efficiency-bar" class="progress"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                        <div class="divider"></div>
+                    </div>
+                    <button class="drop_down_button" onclick="toggleDropdown(this)">
+                        <img class="drop_down_img" alt="Dropdown">
+                    </button>
+                </div>
+                <div class="definition">
+                    <p class="definition_p">Evalue l’impact causé par l’utilisation de matières premières rares dans la production du mobile qui mèneraient à un épuisement des ressources (par exemple, l’or pour la fabrication des composants électroniques) ; plus la note est élevée, plus l’impact est faible.</p>
+                </div>
+            </div>
+                    
+        </div>
+    </div>
+    
+
+    <script>
+        // Extract URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Function to set progress bar width and text
+        function setProgressBar(id, value) {
+            const bar = document.getElementById(id);
+            bar.style.width = value + '%';
+        }
+
+        // Populate the HTML with data
+        document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
+        document.getElementById('durability_score').innerText =urlParams.get('durability') + "%";
+        document.getElementById('repairability_score').innerText =urlParams.get('repairability') + "%";
+        document.getElementById('recyclability_score').innerText =urlParams.get('recyclability') + "%";
+        document.getElementById('climate_efficiency_score').innerText =urlParams.get('climate_efficiency') + "%";
+        document.getElementById('resource_efficiency_score').innerText =urlParams.get('resource_efficiency') + "%";
+
+        setProgressBar('durability-bar', urlParams.get('durability'));
+        setProgressBar('repairability-bar', urlParams.get('repairability'));
+        setProgressBar('recyclability-bar', urlParams.get('recyclability'));
+        setProgressBar('climate-efficiency-bar', urlParams.get('climate_efficiency'));
+        setProgressBar('resource-efficiency-bar', urlParams.get('resource_efficiency'));
+
+        function toggleDropdown(button) {
+            const img = button.querySelector('.drop_down_img');
+            img.classList.toggle('rotate');
+
+            const definition = button.closest('.axe_container').querySelector('.definition_p');
+            const definition_box = button.closest('.axe_container').querySelector('.definition');
+            if (definition) {
+                definition.classList.toggle('hidden');
+                definition_box.classList.toggle('hidden');
+            }
+        }
+
+
+    </script>
+
+     <!-- Inclure le fichier saisonDetection.js -->
+     <script src="js/saisonDetection.js"></script>
+
+     <!-- Inclure le fichier wakeLock.js -->
+     <script src="js/wakeLock.js"></script>
+
+</body>
+</html>

@@ -86,7 +86,7 @@ app.post('/', async (req, res) => {
 
         // Proceed with redirection logic
         if (!hardwareModel || hardwareModel.toLowerCase() !== 'unknown') {
-            
+
             // Save the document to the database
             const savedDevice = await device.save();
             console.log('Device data saved successfully with ID:', savedDevice._id);
@@ -102,7 +102,8 @@ app.post('/', async (req, res) => {
                     repairability: encodeURIComponent(deviceFromCsv.repairability || ''),
                     recyclability: encodeURIComponent(deviceFromCsv.recyclability || ''),
                     climate_efficiency: encodeURIComponent(deviceFromCsv.climate_efficiency || ''),
-                    resource_efficiency: encodeURIComponent(deviceFromCsv.resource_efficiency || '')
+                    resource_efficiency: encodeURIComponent(deviceFromCsv.resource_efficiency || ''),
+                    element_ID_MongoDB: savedDevice._id,
                 }).toString();
                 
                 if (ecoRating > process.env.THRESHOLD) {
@@ -121,6 +122,23 @@ app.post('/', async (req, res) => {
         if (!res.headersSent) {
             res.status(500).json({ error: 'Internal server error' });
         }
+    }
+});
+
+// Add this route to check the device status by its element ID (MongoDB document ID)
+app.get('/device/:elementID', async (req, res) => {
+    try {
+        const { elementID } = req.params;
+        const device = await Device.findById(elementID);
+        
+        if (!device) {
+            return res.status(404).json({ error: 'Device not found' });
+        }
+
+        res.json(device); // Send back the device data to the frontend
+    } catch (err) {
+        console.error('Error fetching device:', err);
+        res.status(500).json({ error: 'Internal server error' });
     }
 });
 

@@ -43,13 +43,32 @@
     <script>
         // Extract URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-
-        // Populate the HTML with data
+        
         document.getElementById('ecoRating').innerText =urlParams.get('eco_rating') + "%";
+        const elementID = urlParams.get('element_ID_MongoDB');
+
+        // Function to check if the device's 'onBase' value has changed
+        async function checkOnBaseChange() {
+            try {
+                const response = await fetch(`/device/${elementID}`);
+                const deviceData = await response.json();
+                
+                if (deviceData.onBase !== 0) {
+                    // If 'onBase' has changed, redirect to the details page
+                    window.location.href = `/score_details_IHM.html?${urlParams}`;
+                }
+            } catch (error) {
+                console.error('Error checking onBase change:', error);
+            }
+        }
+
+        // Poll the device status every 3 seconds (3000 milliseconds)
+        setInterval(checkOnBaseStatus, 3000);
 
         document.getElementById("searchButton").addEventListener("click", function(){
             window.location.href = "/ou_chercher_IHM.html";
         })
+
     </script>
 
      <!-- Inclure le fichier saisonDetection.js -->

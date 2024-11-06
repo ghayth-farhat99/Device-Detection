@@ -47,36 +47,43 @@ const logoImages = {
     automne: '../images/ecorating-logo/ecorating-logo-automne.png'
 };
 
+const dropDownImages = {
+    hiver: '../images/buttons/bouton-bleu.png',
+    printemps: '../images/buttons/bouton-vert.png',
+    ete: '../images/buttons/bouton-jaune.png',
+    automne: '../images/buttons/bouton-marron.png'
+}
+
 // Mapping of direction images by season
 const directionImages = {
-    hiver: '../images/direction/direction bleue.png',
-    printemps: '../images/direction/direction vrete.png',
-    ete: '../images/direction/direction jaune.png',
-    automne: '../images/direction/direction marron.png'
+    hiver: '../images/direction/direction-bleue.png',
+    printemps: '../images/direction/direction-vrete.png',
+    ete: '../images/direction/direction-jaune.png',
+    automne: '../images/direction/direction-marron.png'
 };
 
 // Mapping of croissance images by season
 const croissanceImages = {
-    hiver: '../images/croissance/croissance bleue.png',
-    printemps: '../images/croissance/croissance verte.png',
-    ete: '../images/croissance/croissance jaune.png',
-    automne: '../images/croissance/croissance marron.png'
+    hiver: '../images/croissance/croissance-bleue.png',
+    printemps: '../images/croissance/croissance-verte.png',
+    ete: '../images/croissance/croissance-jaune.png',
+    automne: '../images/croissance/croissance-marron.png'
 };
 
 // Mapping of croissance images by season
 const planeteImages = {
-    hiver: '../images/planete/planete  bleue.png',
-    printemps: '../images/planete/planete  verte.png',
-    ete: '../images/planete/planete  jaune.png',
-    automne: '../images/planete/planete  marron.png'
+    hiver: '../images/planete/planete-bleue.png',
+    printemps: '../images/planete/planete-verte.png',
+    ete: '../images/planete/planete-jaune.png',
+    automne: '../images/planete/planete-marron.png'
 };
 
 // Mapping of croissance images by season
 const supportsImages = {
-    hiver: '../images/supports/supports bleus.png',
-    printemps: '../images/supports/supports verte.png',
-    ete: '../images/supports/supports jaune.png',
-    automne: '../images/supports/supports marron.png'
+    hiver: '../images/supports/supports-bleus.png',
+    printemps: '../images/supports/supports-verte.png',
+    ete: '../images/supports/supports-jaune.png',
+    automne: '../images/supports/supports-marron.png'
 };
 
 
@@ -131,6 +138,16 @@ function updateSupports(saison) {
     const supportsElement = document.querySelector('.image_supports'); 
     if (supportsElement && supportsImages[saison]) {
         supportsElement.src = supportsImages[saison]; 
+    }
+}
+
+// Function to update the drop-down button based on the season
+function updateDropDownButton(saison) {
+    const dropDownElements = document.querySelectorAll('.drop_down_img'); // Select all elements with the class 'drop_down_img'
+    if (dropDownImages[saison]) {
+        dropDownElements.forEach(element => {
+            element.src = dropDownImages[saison]; // Update the src attribute for each element
+        });
     }
 }
 
@@ -190,4 +207,7 @@ window.onload = function() {
 
     // Update the supports for the current season
     updateSupports(saisonActuelle);
+
+    // Update the drop-down button for the current season
+    updateDropDownButton(saisonActuelle);
 };

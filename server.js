@@ -45,7 +45,7 @@ const Device = mongoose.model('dev', deviceSchema);
 
 // Serve bienvenue_IHM.html for the root route
 app.get('/', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './bienvenue/bienvenue_IHM.html'));
+    res.sendFile(path.join(__dirname, 'dist', './pages/bienvenue/bienvenue_IHM.html'));
 });
 
 // CSV search function
@@ -76,7 +76,7 @@ function searchCsv(id) {
 app.post('/', async (req, res) => {
     try {
         const deviceData = req.body;
-        const hardwareModel = deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
+        const hardwareModel = deviceData.hardwareModel; // deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
         console.log('Received request body:', req.body); // Log the request body to verify the data
         
         // Create a new device document using the model
@@ -123,27 +123,31 @@ app.post('/', async (req, res) => {
 
 // Serve the different HTML pages based on the redirects
 app.get('/score_OK_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './score_OK/score_OK_IHM.html'));
+    res.sendFile(path.join(__dirname, 'dist', './pages/score_OK/score_OK_IHM.html'));
 });
 
 app.get('/score_ameliorable_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './score_ameliorable/score_ameliorable_IHM.html'));
+    res.sendFile(path.join(__dirname, 'dist', './pages/score_ameliorable/score_ameliorable_IHM.html'));
 });
 
 app.get('/score_inconnu_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './score_inconnu/score_inconnu_IHM.html'));
+    res.sendFile(path.join(__dirname, 'dist', './pages/score_inconnu/score_inconnu_IHM.html'));
 });
 
 app.get('/labels_verts_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './labels_verts/labels_verts_IHM.html'));
+    res.sendFile(path.join(__dirname, 'dist', './pages/labels_verts/labels_verts_IHM.html'));
 });
 
 app.get('/ou_chercher_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './ou_chercher/ou_chercher_IHM.html'));
+    res.sendFile(path.join(__dirname, 'dist', './pages/ou_chercher/ou_chercher_IHM.html'));
 });
 
 app.get('/ou_explorer_IHM.html', (_req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', './ou_explorer/ou_explorer_IHM.html'));
+    res.sendFile(path.join(__dirname, 'dist', './pages/ou_explorer/ou_explorer_IHM.html'));
+});
+
+app.get('/score_details_IHM.html', (_req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', './pages/score_details/score_details_IHM.html'));
 });
 
 start();

@@ -39,7 +39,7 @@ const deviceSchema = new mongoose.Schema({
     screenPixelsWidth: Number,
     screenPixelsHeight: Number,
     ecoScore: Number,
-    onBase: 0,
+    onBase: Number,
 }, { timestamps: true });
 
 const Device = mongoose.model('dev', deviceSchema);
@@ -77,6 +77,7 @@ function searchCsv(id) {
 app.post('/', async (req, res) => {
     try {
         const deviceData = req.body;
+        deviceData.onBase = 0;
         const hardwareModel = deviceData.hardwareModel; // deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
         console.log('Received request body:', req.body); // Log the request body to verify the data
         

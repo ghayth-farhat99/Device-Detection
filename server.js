@@ -39,6 +39,7 @@ const deviceSchema = new mongoose.Schema({
     screenPixelsWidth: Number,
     screenPixelsHeight: Number,
     ecoScore: Number,
+    onBase: 0,
 }, { timestamps: true });
 
 const Device = mongoose.model('dev', deviceSchema);

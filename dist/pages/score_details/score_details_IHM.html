@@ -29,7 +29,7 @@
         </div>
         
         <div class="btn-container">
-            <button class="btn_download">pdf</button>
+            <button class="btn_download" onclick="downloadPDF()">pdf</button>
         </div>
 
         <div class="bars-container">
@@ -183,7 +183,32 @@
             }
         }
 
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
 
+            // Gather values from URL parameters
+            const ecoRating = urlParams.get('eco_rating') + "%";
+            const durability = urlParams.get('durability') + "%";
+            const repairability = urlParams.get('repairability') + "%";
+            const recyclability = urlParams.get('recyclability') + "%";
+            const climateEfficiency = urlParams.get('climate_efficiency') + "%";
+            const resourceEfficiency = urlParams.get('resource_efficiency') + "%";
+
+            // Add text to PDF
+            doc.setFontSize(18);
+            doc.text("Éco-Rating Report", 10, 10);
+            doc.setFontSize(12);
+            doc.text(`Global Éco-Rating Score: ${ecoRating}`, 10, 20);
+            doc.text(`Durability: ${durability}`, 10, 30);
+            doc.text(`Repairability: ${repairability}`, 10, 40);
+            doc.text(`Recyclability: ${recyclability}`, 10, 50);
+            doc.text(`Climate Efficiency: ${climateEfficiency}`, 10, 60);
+            doc.text(`Resource Efficiency: ${resourceEfficiency}`, 10, 70);
+
+            // Save the PDF
+            doc.save("eco_rating_report.pdf");
+        }
     </script>
 
      <!-- Inclure le fichier saisonDetection.js -->

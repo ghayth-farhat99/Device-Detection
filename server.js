@@ -125,22 +125,21 @@ app.post('/', async (req, res) => {
     }
 });
 
-// Add this route to check the device status by its element ID (MongoDB document ID)
-app.get('/device/:elementID', async (req, res) => {
+app.get('/check-onbase/:id', async (req, res) => {
     try {
-        const { elementID } = req.params;
-        const device = await Device.findById(elementID);
-        
-        if (!device) {
-            return res.status(404).json({ error: 'Device not found' });
+        const { id } = req.params;
+        const device = await Device.findById(id);
+        if (device) {
+            res.json({ onBase: device.onBase });
+        } else {
+            res.status(404).json({ error: 'Device not found' });
         }
-
-        res.json(device); // Send back the device data to the frontend
-    } catch (err) {
-        console.error('Error fetching device:', err);
+    } catch (error) {
+        console.error('Error checking onBase:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
 
 // Serve the different HTML pages based on the redirects
 app.get('/score_OK_IHM.html', (_req, res) => {

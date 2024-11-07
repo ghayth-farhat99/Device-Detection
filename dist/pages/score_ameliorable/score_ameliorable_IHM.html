@@ -39,12 +39,12 @@
         </div>
     </div>
     
-
     <script>
         // Extract URL parameters
         const urlParams = new URLSearchParams(window.location.search);
+    
         document.getElementById('ecoRating').innerText = urlParams.get('eco_rating') + "%";
-        const elementID = urlParams.get('element_ID_MongoDB');
+        const elementID = urlParams.get('device_id'); // Assuming 'device_id' is the ID in the query parameters
     
         document.getElementById("searchButton").addEventListener("click", function() {
             window.location.href = "/ou_chercher_IHM.html";
@@ -56,7 +56,9 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.onBase === 1) {
-                        window.location.href = `/score_details_IHM.html${urlParams.toString()}`;
+                        // Append all existing query parameters to the new URL
+                        const redirectUrl = `/score_details_IHM.html?${urlParams.toString()}`;
+                        window.location.href = redirectUrl;
                     }
                 })
                 .catch(error => console.error('Error checking onBase status:', error));

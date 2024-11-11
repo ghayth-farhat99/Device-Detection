@@ -109,7 +109,7 @@ app.post('/', async (req, res) => {
                 if (ecoRating > process.env.THRESHOLD) {
                     return res.redirect(`/score_OK_IHM.html?${queryParams}`);
                 } else {
-                    return res.redirect(`/score_details_IHM.html?${queryParams}`);
+                    return res.redirect(`/score_ameliorable_IHM.html?${queryParams}`);
                 }
             } else {
                 return res.redirect('/score_inconnu_IHM.html');

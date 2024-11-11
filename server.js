@@ -78,7 +78,7 @@ app.post('/', async (req, res) => {
     try {
         const deviceData = req.body;
         deviceData.onBase = 0;
-        const hardwareModel = "CPH2621"; // deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
+        const hardwareModel = deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
         console.log('Received request body:', req.body); // Log the request body to verify the data
         
         // Create a new device document using the model

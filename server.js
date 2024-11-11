@@ -78,7 +78,7 @@ app.post('/', async (req, res) => {
     try {
         const deviceData = req.body;
         deviceData.onBase = 0;
-        const hardwareModel = deviceData.hardwareModel; // deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
+        const hardwareModel = "CPH2621"; // deviceData.hardwareModel; // Assuming hardwareModel comes from the client request
         console.log('Received request body:', req.body); // Log the request body to verify the data
         
         // Create a new device document using the model
@@ -109,7 +109,7 @@ app.post('/', async (req, res) => {
                 if (ecoRating > process.env.THRESHOLD) {
                     return res.redirect(`/score_OK_IHM.html?${queryParams}`);
                 } else {
-                    return res.redirect(`/score_ameliorable_IHM.html?${queryParams}`);
+                    return res.redirect(`/score_details_IHM.html?${queryParams}`);
                 }
             } else {
                 return res.redirect('/score_inconnu_IHM.html');

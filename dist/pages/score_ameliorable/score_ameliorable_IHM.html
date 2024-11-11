@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include google fonts library -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <!-- Include css -->
     <link rel="stylesheet" href="/pages/score_ameliorable/score_ameliorable.css"/>
     <title>Écorating</title>
 
@@ -34,39 +36,25 @@
 
         <div class="btn-container">
             <div class="btn1">
-                <button id="searchButton"> <img src="../images/buttons/button1.png" class="icon"><span class="button-text"> Où chercher ?</span></button>
+                <button id="searchButton"> <img src="../../images/buttons/button1.png" class="icon"><span class="button-text"> Où chercher ?</span></button>
             </div>
         </div>
     </div>
     
-
     <script>
         // Extract URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         document.getElementById('ecoRating').innerText = urlParams.get('eco_rating') + "%";
         const elementID = urlParams.get('element_ID_MongoDB');
-    
+
         document.getElementById("searchButton").addEventListener("click", function() {
             window.location.href = "/ou_chercher_IHM.html";
         });
-    
-        // Function to check the onBase status periodically
-        function checkOnBaseStatus() {
-            fetch(`/check-onbase/${elementID}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.onBase === 1) {
-                        window.location.href = `/score_details_IHM.html?${urlParams.toString()}`;
-                    }
-                })
-                .catch(error => console.error('Error checking onBase status:', error));
-        }
-    
-        // Check every 5 seconds (5000 ms)
-        setInterval(checkOnBaseStatus, 5000);
     </script>
-    
 
+    <!-- Inclure le fichier checkOnBaseStatus.js -->
+    <script src="../../js/checkOnBaseStatus.js"></script>
+    
      <!-- Inclure le fichier saisonDetection.js -->
      <script src="../../js/saisonDetection.js"></script>
 

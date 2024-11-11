@@ -62,10 +62,15 @@
             <div class="subcontainer_vertically">
                 <p>majoritairement dans la fabrication</p>
             </div>
-        </div>
-        
-        
+        </div>  
+
     </div>
+
+    <script>
+        // Extract URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const elementID = urlParams.get('element_ID_MongoDB');
+    </script>
 
     <!-- Inclure le fichier checkOnBaseStatus.js -->
     <script src="../../js/checkOnBaseStatus.js"></script>

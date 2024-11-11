@@ -149,6 +149,39 @@
                     
         </div>
     </div>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+
+        function setProgressBar(id, value) {
+            const bar = document.getElementById(id);
+            bar.style.width = value + '%';
+        }
+
+        document.getElementById('ecoRating').innerText = urlParams.get('eco_rating') + "%";
+        document.getElementById('durability_score').innerText = urlParams.get('durability') + "%";
+        document.getElementById('repairability_score').innerText = urlParams.get('repairability') + "%";
+        document.getElementById('recyclability_score').innerText = urlParams.get('recyclability') + "%";
+        document.getElementById('climate_efficiency_score').innerText = urlParams.get('climate_efficiency') + "%";
+        document.getElementById('resource_efficiency_score').innerText = urlParams.get('resource_efficiency') + "%";
+
+        setProgressBar('durability-bar', urlParams.get('durability'));
+        setProgressBar('repairability-bar', urlParams.get('repairability'));
+        setProgressBar('recyclability-bar', urlParams.get('recyclability'));
+        setProgressBar('climate-efficiency-bar', urlParams.get('climate_efficiency'));
+        setProgressBar('resource-efficiency-bar', urlParams.get('resource_efficiency'));
+
+        function toggleDropdown(button) {
+            const img = button.querySelector('.drop_down_img');
+            img.classList.toggle('rotate');
+            const definition = button.closest('.axe_container').querySelector('.definition_p');
+            const definition_box = button.closest('.axe_container').querySelector('.definition');
+            if (definition) {
+                definition.classList.toggle('hidden');
+                definition_box.classList.toggle('hidden');
+            }
+        }
+    </script>
 
     <!-- Inclure le fichier downloadPDF.js -->
     <script src="../../js/downloadPDF.js"></script>

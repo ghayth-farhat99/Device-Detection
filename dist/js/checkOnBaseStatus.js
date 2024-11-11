@@ -12,4 +12,4 @@ function checkOnBaseStatus() {
 }
 
 // Check every 5 seconds (5000 ms)
-setInterval(checkOnBaseStatus, 5000);
+setInterval(checkOnBaseStatus, 3000);

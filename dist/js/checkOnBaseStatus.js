@@ -11,5 +11,5 @@ function checkOnBaseStatus() {
         .catch(error => console.error('Error checking onBase status:', error));
 }
 
-// Check every 5 seconds (5000 ms)
+// Check every 3 seconds (3000 ms)
 setInterval(checkOnBaseStatus, 3000);
